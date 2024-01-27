@@ -14,6 +14,6 @@ void main() => runApp(MaterialApp(
   routes: {
     '/splash': (context) => SplashScreen(),
     '/': (context) => MainScreen(),
-    '/todo': (context) => Home(),
+    '/card': (context) => Home(),
   },
 ));
