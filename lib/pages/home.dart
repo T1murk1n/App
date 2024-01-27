@@ -75,47 +75,6 @@ class _HomeState extends State<Home> {
 
           }
       ),
-
-
-      /*StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('items').snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if(!snapshot.hasData) return Text('Нет записей');
-          return ListView.builder(
-              itemCount: todoList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Dismissible(
-                  key: Key(todoList[index]), //snapshot.data.docs[index].id
-                  child: Card(
-                    child: ListTile(
-                      title: Text(todoList[index]),
-                      trailing:  IconButton(
-                          icon: Icon(
-                            Icons.delete_sweep,
-                            color: Colors.deepOrangeAccent,
-                          ),
-                          onPressed: () {
-                            showDialog(context: context, builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: Text(todoList[index]),
-                              );
-                            });
-                          }
-                      ),
-                    ),
-                  ),
-                  onDismissed: (direction) {
-                    setState(() {
-                      todoList.removeAt(index);
-                    });
-                  },
-                );
-
-              }
-          );
-        },
-      ),*/
-
     );
   }
 }

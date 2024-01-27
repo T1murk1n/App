@@ -6,84 +6,44 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[700],
-        appBar: AppBar(
-          title: Text('Medicine'),
-          centerTitle: true,
-        ),
-        body: Center(
-          heightFactor: 3,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.pushNamed(context, '/todo');
-                  }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
-                  )
-              ),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.pushNamed(context, '/todo');
-                  }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
-                  )
-              ),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.pushNamed(context, '/todo');
-                  }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
-                  )
-              ),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.pushNamed(context, '/todo');
-                  }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
-                  )
-              ),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.pushNamed(context, '/todo');
-                  }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
-                  )
-              ),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.pushNamed(context, '/todo');
-                  }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
-                  )
-              ),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.pushNamed(context, '/todo');
-                  }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
-                  )
-              ),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.pushNamed(context, '/todo');
-                  }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
-                  )
-              ),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: ElevatedButton(onPressed: () {
-                    Navigator.pushNamed(context, '/todo');
-                  }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
-                  )
-              ),
-            ],
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Я ищу...',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+
+                    filled: true,
+                    fillColor: Colors.grey.shade100,
+                    suffixIcon: Align(
+                      widthFactor: 1.0,
+                      heightFactor: 1.0,
+                      child: Icon(
+                        Icons.search,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 8),
+                Wrap(
+                  children: [
+
+                  ],
+                )
+              ],
+            ),
           ),
-        )
+        ),
     );
   }
 
 }
+// ElevatedButton(onPressed: () {
+// Navigator.pushNamed(context, '/todo');
+// }, child: Text('Позвоночник', style: TextStyle(color: Colors.black, fontSize: 22),)
+// )
