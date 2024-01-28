@@ -5,6 +5,23 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final style = ButtonStyle(
+      padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+      minimumSize: MaterialStateProperty.all(Size(160, 160)),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20)
+        )
+      )
+    );
+    final text = TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w300,
+        fontFamily: 'Roboto',
+        color: Colors.black
+    );
+
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
@@ -93,7 +110,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Советы по изучению анатомии', style: text),
                             ),
                           ],
                         ),
@@ -118,7 +135,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Введение в анатомию', style: text),
                             ),
                           ],
                         ),
@@ -143,7 +160,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('История анатомии', style: text),
                             ),
                           ],
                         ),
@@ -168,7 +185,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Эндокринная система', style: text),
                             ),
                           ],
                         ),
@@ -193,7 +210,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Дыхательная система', style: text),
                             ),
                           ],
                         ),
@@ -218,7 +235,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Сердечно-сосудистая система', style: text),
                             ),
                           ],
                         ),
@@ -243,42 +260,46 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Нервная система', style: text),
                             ),
                           ],
                         ),
                       ),
 
 
-                      Container(
-                        width: 160,
-                        height: 160,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 249, 250, 251),
-                        ),
-                        child: Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
-                              ),
-                              child: Image(image: AssetImage('assets/osteology.png'), fit: BoxFit.cover),
+
+
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/menu');
+                          },
+                        style: style,
+                          child: Container(
+                            width: 160,
+                            height: 160,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color.fromARGB(255, 249, 250, 251),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: TextButton(
-                                onPressed: () {
-                                    Navigator.pushNamed(context, '/card');
-                                  },
-                                child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
-                              )
+                            child: Column(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(0),
+                                  ),
+                                  child: Image(image: AssetImage('assets/osteology.png'), fit: BoxFit.cover),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Остеология', style: text),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+
                       ),
 
 
@@ -302,7 +323,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Артрология', style: text),
                             ),
                           ],
                         ),
@@ -327,7 +348,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Миология', style: text),
                             ),
                           ],
                         ),
@@ -352,7 +373,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Пищеварительная система', style: text),
                             ),
                           ],
                         ),
@@ -377,7 +398,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('Советы по изучению анатомии', style: TextStyle(fontSize: 12, fontFamily: 'Roboto')),
+                              child: Text('Мочевая система', style: text),
                             ),
                           ],
                         ),

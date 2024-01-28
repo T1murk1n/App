@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:medicine/pages/home.dart';
 import 'package:medicine/pages/main_screen.dart';
 import 'package:medicine/pages/splash.dart';
+import 'package:medicine/pages/notes.dart';
+import 'package:medicine/pages/menu.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -15,5 +17,7 @@ void main() => runApp(MaterialApp(
     '/splash': (context) => SplashScreen(),
     '/': (context) => MainScreen(),
     '/card': (context) => Home(),
+    '/notes': (context) => Notes(),
+    '/menu': (context) => Menu(),
   },
 ));
