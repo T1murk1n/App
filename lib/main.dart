@@ -6,6 +6,7 @@ import 'package:medicine/pages/main_screen.dart';
 import 'package:medicine/pages/splash.dart';
 import 'package:medicine/pages/notes.dart';
 import 'package:medicine/pages/menu.dart';
+import 'package:medicine/pages/cards.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -19,5 +20,6 @@ void main() => runApp(MaterialApp(
     '/card': (context) => Home(),
     '/notes': (context) => Notes(),
     '/menu': (context) => Menu(),
+    '/cards': (context) => Cards(),
   },
 ));

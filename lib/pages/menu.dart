@@ -201,7 +201,7 @@ class _MenuState extends State<Menu> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-
+                        Navigator.pushNamed(context, '/cards');
                       },
                       style: style,
                       child: Container(

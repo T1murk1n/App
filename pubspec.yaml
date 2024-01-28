@@ -28,7 +28,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flip_card: ^0.6.0
   blur: ^3.0.0
+  carousel_slider: ^4.0.0
   flutter:
     sdk: flutter
 

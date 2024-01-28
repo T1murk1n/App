@@ -1,0 +1,186 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:flip_card/flip_card.dart';
+
+class Cards extends StatefulWidget {
+  const Cards({super.key});
+
+  @override
+  State<Cards> createState() => _CardsState();
+}
+dynamic arrLatin = ['Vertebrae thoracicae', 'Hjhgjdhfgjdhgjdhgjdhg', 'Vertebra', 'Corpus vertebrae'];
+dynamic arrRus = ['Грудной отдел', 'Хуйня какая-то', 'Позвонок', 'Тело позвонка '];
+
+class _CardsState extends State<Cards> {
+  final controller = CarouselController();
+  int i=1;
+  @override
+  Widget build(BuildContext context) {
+    final cardText = TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        fontFamily: 'Roboto'
+    );
+
+
+
+    final style = ButtonStyle(
+        padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+        minimumSize: MaterialStateProperty.all(Size(160, 160)),
+        shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20)
+            )
+        )
+    );
+    final text = TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w300,
+        fontFamily: 'Roboto',
+        color: Colors.black
+    );
+    return Scaffold(
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          if(index == 0) {
+            Navigator.pushNamed(context, '/');
+          }
+          if(index == 1) {
+            Navigator.pushNamed(context, '/splash');
+          }
+          if(index == 2) {
+            Navigator.pushNamed(context, '/splash');
+          }
+        },
+        indicatorColor: Colors.indigo.shade100,
+        destinations: const <Widget>[
+          NavigationDestination(
+            icon: Icon(Icons.home),
+            label: 'Главная',
+          ),
+          NavigationDestination(
+            icon: Badge(child: Icon(Icons.cast_for_education)),
+            label: 'Моё обучение',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person),
+            label: 'Профиль',
+          ),
+        ],
+      ),
+      appBar: AppBar(
+        title: Text('Карточки'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: CarouselSlider.builder(
+                  itemCount: arrLatin.length,
+                  itemBuilder: (context, index, realIndex) {
+                    return buildImage(index);
+                  },
+                  carouselController: controller,
+                  options: CarouselOptions(
+                    height: 400,
+                    initialPage: 0,
+                    enableInfiniteScroll: false,
+                    enlargeCenterPage: true,
+
+                  )
+              ),
+            ),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Нажмите, чтобы перевернуть', style: text,)
+              ],
+            ),
+            SizedBox(height: 20,),
+            buildButtons(),
+          ],
+        ),
+      ),
+
+    );
+  }
+  Widget buildImage(int index) => FlipCard(
+    fill: Fill.fillBack, // Fill the back side of the card to make in the same size as the front.
+    direction: FlipDirection.HORIZONTAL, // nitially display.
+    front: Container(
+      height: 250,
+      width: 300,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        color: Colors.grey.shade100,
+      ),
+      child: Center(child: Text(arrLatin[index], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
+
+    ),
+    back: Container(
+      height: 250,
+      width: 300,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        color: Colors.grey.shade100,
+      ),
+      child: Center(child: Text(arrRus[index], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
+    ),
+  );
+
+  Widget buildButtons({bool stretch = false}) => Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      Ink(
+          decoration: const ShapeDecoration(
+            color: Colors.deepOrangeAccent,
+            shape: CircleBorder(),
+          ),
+          child:IconButton(
+            onPressed: previous,
+            iconSize: 32,
+            color: Colors.white,
+            icon: Icon(Icons.arrow_back_ios_rounded),
+
+          )
+      ),
+      Text('$i/${arrLatin.length}', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),),
+      Ink(
+        decoration: const ShapeDecoration(
+          color: Colors.deepOrangeAccent,
+          shape: CircleBorder(),
+        ),
+        child: IconButton(
+          onPressed: next,
+          iconSize: 32,
+          color: Colors.white,
+          icon: Icon(Icons.arrow_forward_ios_rounded),
+
+        )
+      ),
+
+
+    ],
+  );
+  void next() {
+    controller.nextPage();
+    setState(() {
+      if(i < arrLatin.length) {
+        i++;
+      }
+    });
+  }
+  void previous() {
+    controller.previousPage();
+    setState(() {
+      if(i>1) {
+        i--;
+      }
+    });
+  }
+
+
+}
