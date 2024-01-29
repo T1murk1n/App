@@ -46,7 +46,7 @@ class _MenuState extends State<Menu> {
             Navigator.pushNamed(context, '/splash');
           }
         },
-        indicatorColor: Colors.indigo.shade100,
+        indicatorColor: Colors.transparent,
         destinations: const <Widget>[
           NavigationDestination(
             icon: Icon(Icons.home),

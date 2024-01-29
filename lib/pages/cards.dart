@@ -8,8 +8,8 @@ class Cards extends StatefulWidget {
   @override
   State<Cards> createState() => _CardsState();
 }
-dynamic arrLatin = ['Vertebrae thoracicae', 'Hjhgjdhfgjdhgjdhgjdhg', 'Vertebra', 'Corpus vertebrae'];
-dynamic arrRus = ['Грудной отдел', 'Хуйня какая-то', 'Позвонок', 'Тело позвонка '];
+dynamic arrLatin = [['Vertebrae thoracicae','Грудной отдел'], ['Hjhgjdhfgjdhgjdhgjdhg', 'Хуйня какая-то'], ['Vertebra', 'Позвонок'],
+  ['Corpus vertebrae', 'Тело позвонка']];
 
 class _CardsState extends State<Cards> {
   final controller = CarouselController();
@@ -52,7 +52,7 @@ class _CardsState extends State<Cards> {
             Navigator.pushNamed(context, '/splash');
           }
         },
-        indicatorColor: Colors.indigo.shade100,
+        indicatorColor: Colors.transparent,
         destinations: const <Widget>[
           NavigationDestination(
             icon: Icon(Icons.home),
@@ -71,37 +71,39 @@ class _CardsState extends State<Cards> {
       appBar: AppBar(
         title: Text('Карточки'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: CarouselSlider.builder(
-                  itemCount: arrLatin.length,
-                  itemBuilder: (context, index, realIndex) {
-                    return buildImage(index);
-                  },
-                  carouselController: controller,
-                  options: CarouselOptions(
-                    height: 400,
-                    initialPage: 0,
-                    enableInfiniteScroll: false,
-                    enlargeCenterPage: true,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: CarouselSlider.builder(
+                    itemCount: arrLatin.length,
+                    itemBuilder: (context, index, realIndex) {
+                      return buildImage(index);
+                    },
+                    carouselController: controller,
+                    options: CarouselOptions(
+                      height: 390,
+                      initialPage: 0,
+                      enableInfiniteScroll: false,
+                      enlargeCenterPage: true,
 
-                  )
+                    )
+                ),
               ),
-            ),
-            SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Нажмите, чтобы перевернуть', style: text,)
-              ],
-            ),
-            SizedBox(height: 20,),
-            buildButtons(),
-          ],
+              SizedBox(height: 18,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Нажмите, чтобы перевернуть', style: text,)
+                ],
+              ),
+              SizedBox(height: 18,),
+              buildButtons(),
+            ],
+          ),
         ),
       ),
 
@@ -117,7 +119,7 @@ class _CardsState extends State<Cards> {
         borderRadius: BorderRadius.circular(50),
         color: Colors.grey.shade100,
       ),
-      child: Center(child: Text(arrLatin[index], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
+      child: Center(child: Text(arrLatin[index][0], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
 
     ),
     back: Container(
@@ -127,7 +129,7 @@ class _CardsState extends State<Cards> {
         borderRadius: BorderRadius.circular(50),
         color: Colors.grey.shade100,
       ),
-      child: Center(child: Text(arrRus[index], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
+      child: Center(child: Text(arrLatin[index][1], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
     ),
   );
 

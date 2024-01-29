@@ -37,7 +37,7 @@ class _NotesState extends State<Notes> {
                 Navigator.pushNamed(context, '/splash');
               }
             },
-            indicatorColor: Colors.indigo.shade100,
+            indicatorColor: Colors.transparent,
             destinations: const <Widget>[
               NavigationDestination(
                 icon: Icon(Icons.home),
