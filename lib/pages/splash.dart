@@ -10,7 +10,7 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin{
+class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin{//with TickerProviderStateMixin
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 2),
     vsync: this,
@@ -20,13 +20,10 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     curve: Curves.easeIn,
   );
 
+
+
   @override
   void initState() {
-    // AnimationController controller = AnimationController(vsync: this,duration: Duration(seconds: 2));
-    // Animation _animation = Tween(
-    //     begin: 0.0,
-    //     end: 1.0
-    // ).animate(controller);
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     
@@ -38,6 +35,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   void dispose () {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
+    _controller.dispose();
     super.dispose();
 
   }
@@ -110,7 +108,6 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                           opacity: _animation,
                           child: Image(image: AssetImage('assets/logo.png'), width: 100, height: 100,)
                       ),
-
                     ],
                   ),
                 ),
