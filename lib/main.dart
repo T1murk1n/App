@@ -11,7 +11,7 @@ void main() => runApp(MaterialApp(
   theme: ThemeData(
     primaryColor: Colors.deepOrangeAccent,
   ),
-  initialRoute: '/card',
+  initialRoute: '/splash',
   routes: {
     '/splash': (context) => SplashScreen(),
     '/': (context) => MainScreen(),

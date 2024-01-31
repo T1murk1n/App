@@ -89,7 +89,6 @@ class _CardsState extends State<Cards> {
                       initialPage: 0,
                       enableInfiniteScroll: false,
                       enlargeCenterPage: true,
-
                     )
                 ),
               ),

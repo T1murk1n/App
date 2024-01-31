@@ -10,15 +10,27 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin{
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 2),
+    vsync: this,
+  )..repeat(reverse: true);
+  late final Animation<double> _animation = CurvedAnimation(
+    parent: _controller,
+    curve: Curves.easeIn,
+  );
+
   @override
-
   void initState() {
-
+    // AnimationController controller = AnimationController(vsync: this,duration: Duration(seconds: 2));
+    // Animation _animation = Tween(
+    //     begin: 0.0,
+    //     end: 1.0
+    // ).animate(controller);
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(seconds: 2), () {
       Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
     });
   }
@@ -27,7 +39,10 @@ class _SplashScreenState extends State<SplashScreen> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
     super.dispose();
+
   }
+
+
 
   Widget build(BuildContext context) {
     return
@@ -91,7 +106,10 @@ class _SplashScreenState extends State<SplashScreen> {
                         ),
                       ),
                       SizedBox(height: 52),
-                      Image(image: AssetImage('assets/logo.png')),
+                      FadeTransition(
+                          opacity: _animation,
+                          child: Image(image: AssetImage('assets/logo.png'), width: 100, height: 100,)
+                      ),
 
                     ],
                   ),
