@@ -5,6 +5,7 @@ import 'package:medicine/pages/splash.dart';
 import 'package:medicine/pages/notes.dart';
 import 'package:medicine/pages/menu.dart';
 import 'package:medicine/pages/cards.dart';
+import 'package:medicine/pages/quiz.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -13,11 +14,12 @@ void main() => runApp(MaterialApp(
   ),
   initialRoute: '/splash',
   routes: {
-    '/splash': (context) => SplashScreen(),
-    '/': (context) => MainScreen(),
-    '/card': (context) => Home(),
-    '/notes': (context) => Notes(),
-    '/menu': (context) => Menu(),
-    '/cards': (context) => Cards(),
+    '/splash': (context) => const SplashScreen(),
+    '/': (context) => const MainScreen(),
+    '/card': (context) => const Home(),
+    '/notes': (context) => const Notes(),
+    '/menu': (context) => const Menu(),
+    '/cards': (context) => const Cards(),
+    '/quiz': (context) => const Quiz(),
   },
 ));

@@ -91,76 +91,6 @@ class _MenuState extends State<Menu> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   children: [
-                //     ElevatedButton(
-                //       onPressed: () {
-                //         Navigator.pushNamed(context, '/notes');
-                //       },
-                //       style: style,
-                //       child: Container(
-                //         width: 160,
-                //         height: 160,
-                //         decoration: BoxDecoration(
-                //           borderRadius: BorderRadius.circular(20),
-                //           color: const Color.fromARGB(255, 249, 250, 251),
-                //         ),
-                //         child: Column(
-                //           children: [
-                //             ClipRRect(
-                //               borderRadius: BorderRadius.only(
-                //                 topLeft: Radius.circular(20),
-                //                 topRight: Radius.circular(20),
-                //                 bottomLeft: Radius.circular(0),
-                //                 bottomRight: Radius.circular(0),
-                //               ),
-                //               child: Image(image: AssetImage('assets/theory.png'), fit: BoxFit.cover),
-                //             ),
-                //             Padding(
-                //               padding: const EdgeInsets.all(8.0),
-                //               child: Text('Теория', style: text),
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //
-                //     ),
-                //     ElevatedButton(
-                //       onPressed: () {
-                //
-                //       },
-                //       style: style,
-                //       child: Container(
-                //         width: 160,
-                //         height: 160,
-                //         decoration: BoxDecoration(
-                //           borderRadius: BorderRadius.circular(20),
-                //           color: const Color.fromARGB(255, 249, 250, 251),
-                //         ),
-                //         child: Column(
-                //           children: [
-                //             ClipRRect(
-                //               borderRadius: BorderRadius.only(
-                //                 topLeft: Radius.circular(20),
-                //                 topRight: Radius.circular(20),
-                //                 bottomLeft: Radius.circular(0),
-                //                 bottomRight: Radius.circular(0),
-                //               ),
-                //               child: Image(image: AssetImage('assets/latin.png'), fit: BoxFit.cover),
-                //             ),
-                //             Padding(
-                //               padding: const EdgeInsets.all(8.0),
-                //               child: Text('Латинский', style: text),
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //
-                //     ),
-                //   ],
-                // ),
-
                 Wrap(
                   runSpacing: 16,
                   spacing: 16,
@@ -233,7 +163,7 @@ class _MenuState extends State<Menu> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-
+                        Navigator.pushNamed(context, '/quiz');
                       },
                       style: style,
                       child: Container(
