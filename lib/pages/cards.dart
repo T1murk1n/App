@@ -16,23 +16,6 @@ class _CardsState extends State<Cards> {
   int i=1;
   @override
   Widget build(BuildContext context) {
-    final cardText = TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w500,
-        fontFamily: 'Roboto'
-    );
-
-
-
-    final style = ButtonStyle(
-        padding: MaterialStateProperty.all(EdgeInsets.all(0)),
-        minimumSize: MaterialStateProperty.all(Size(160, 160)),
-        shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20)
-            )
-        )
-    );
     final text = TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w300,
