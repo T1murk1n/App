@@ -6,6 +6,7 @@ import 'package:medicine/pages/notes.dart';
 import 'package:medicine/pages/menu.dart';
 import 'package:medicine/pages/cards.dart';
 import 'package:medicine/pages/quiz.dart';
+import 'package:medicine/pages/menu_latin.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -21,5 +22,6 @@ void main() => runApp(MaterialApp(
     '/menu': (context) => const Menu(),
     '/cards': (context) => const Cards(),
     '/quiz': (context) => const Quiz(),
+    '/menu_latin': (context) => const MenuLatin(),
   },
 ));

@@ -96,168 +96,184 @@ class _MenuState extends State<Menu> {
                   spacing: 16,
                   alignment: WrapAlignment.spaceBetween,
                   children: [
-
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/notes');
-                      },
-                      style: style,
-                      child: Container(
-                        width: 170,
-                        height: 160,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 249, 250, 251),
-                        ),
-                        child: Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
-                              ),
-                              child: Image(image: AssetImage('assets/theory.png'), fit: BoxFit.cover),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/notes');
+                          },
+                          style: style,
+                          child: Container(
+                            width: 170,
+                            height: 160,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color.fromARGB(255, 249, 250, 251),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Теория', style: text),
+                            child: Column(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(0),
+                                  ),
+                                  child: Image(image: AssetImage('assets/theory.png'), fit: BoxFit.cover),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Теория', style: text),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      ),
+                          ),
 
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/menu_latin');
+                          },
+                          style: style,
+                          child: Container(
+                            width: 170,
+                            height: 160,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color.fromARGB(255, 249, 250, 251),
+                            ),
+                            child: Column(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(0),
+                                  ),
+                                  child: Image(image: AssetImage('assets/latin.png'), fit: BoxFit.cover),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Латинский', style: text),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                        ),
+                      ],
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/cards');
-                      },
-                      style: style,
-                      child: Container(
-                        width: 170,
-                        height: 160,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 249, 250, 251),
-                        ),
-                        child: Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
-                              ),
-                              child: Image(image: AssetImage('assets/latin.png'), fit: BoxFit.cover),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/quiz');
+                          },
+                          style: style,
+                          child: Container(
+                            width: 170,
+                            height: 160,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color.fromARGB(255, 249, 250, 251),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Латинский', style: text),
+                            child: Column(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(0),
+                                  ),
+                                  child: Image(image: AssetImage('assets/tests.png'), fit: BoxFit.cover),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Тесты', style: text),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      ),
+                          ),
 
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+
+                          },
+                          style: style,
+                          child: Container(
+                            width: 170,
+                            height: 160,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: const Color.fromARGB(255, 249, 250, 251),
+                            ),
+                            child: Column(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(0),
+                                    bottomRight: Radius.circular(0),
+                                  ),
+                                  child: Image(image: AssetImage('assets/sit.png'), fit: BoxFit.cover),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Ситуационные задачи', style: text),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                        ),
+                      ],
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/quiz');
-                      },
-                      style: style,
-                      child: Container(
-                        width: 170,
-                        height: 160,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 249, 250, 251),
-                        ),
-                        child: Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 6.0),
+                          child: ElevatedButton(
+                            onPressed: () {
+
+                            },
+                            style: style,
+                            child: Container(
+                              width: 170,
+                              height: 160,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: const Color.fromARGB(255, 249, 250, 251),
                               ),
-                              child: Image(image: AssetImage('assets/tests.png'), fit: BoxFit.cover),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Тесты', style: text),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-
-                      },
-                      style: style,
-                      child: Container(
-                        width: 170,
-                        height: 160,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 249, 250, 251),
-                        ),
-                        child: Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
+                              child: Column(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      topRight: Radius.circular(20),
+                                      bottomLeft: Radius.circular(0),
+                                      bottomRight: Radius.circular(0),
+                                    ),
+                                    child: Image(image: AssetImage('assets/video.png'), fit: BoxFit.cover),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text('Видео', style: text),
+                                  ),
+                                ],
                               ),
-                              child: Image(image: AssetImage('assets/sit.png'), fit: BoxFit.cover),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Ситуационные задачи', style: text),
-                            ),
-                          ],
-                        ),
-                      ),
 
+                          ),
+                        ),
+                      ],
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-
-                      },
-                      style: style,
-                      child: Container(
-                        width: 170,
-                        height: 160,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 249, 250, 251),
-                        ),
-                        child: Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
-                              ),
-                              child: Image(image: AssetImage('assets/video.png'), fit: BoxFit.cover),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Видео', style: text),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                    ),
-
                   ],
                 )
               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class Question {
   final String text;
@@ -24,7 +25,7 @@ class Option {
   });
 }
 
-final questions = [
+List<Question> _questions = [
   Question(
       text: "Отличительной особенностью шейных позвонков является?",
       options: [
@@ -53,6 +54,21 @@ final questions = [
       ]
   ),
 ];
+
+List<Question> shuffle(List<Question> items) {
+  var random = new Random();
+
+  for (var i = items.length - 1; i > 0; i--) {
+    var n = random.nextInt(i + 1);
+    var temp = items[i];
+    items[i] = items[n];
+    items[n] = temp;
+  }
+  return items;
+}
+
+
+final questions = shuffle(_questions);
 
 
 class OptionsWidget extends StatelessWidget {
@@ -187,8 +203,24 @@ class ResultPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                SizedBox(
+                  height: 250,
+                  width: 250,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 16,
+                    value: score/questions.length,
+                    color: Colors.green,
+                    backgroundColor: Colors.transparent,
+                    ),
 
-            Text('${((score/questions.length)*100).toStringAsFixed(2)}%', style: TextStyle(fontFamily: 'Roboto', fontSize: 32, fontWeight: FontWeight.w600),),
+                ),
+                Text('${((score/questions.length)*100).toStringAsFixed(2)}%', style: TextStyle(fontFamily: 'Roboto', fontSize: 32, fontWeight: FontWeight.w600),),
+              ],
+            ),
+
             SizedBox(height: 34,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -200,16 +232,20 @@ class ResultPage extends StatelessWidget {
                 Text('${questions.length - score}', style: TextStyle(color: Colors.red, fontSize: 18),),
               ],
             ),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.pushNamed(context, '/quiz');
+            //
+            //     },
+            //     child: Text("Repeat")
+            // )
           ],
         ),
       ),
     );
   }
 
-
 }
-
-
 
 
 
@@ -261,6 +297,11 @@ class _QuestionWidgetState extends State<QuestionWidget> {
       ),
     );
   }
+
+
+
+
+
 
   Column buildQuestion(Question question) {
     return Column(
@@ -338,6 +379,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
