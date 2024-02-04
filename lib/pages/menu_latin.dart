@@ -146,7 +146,7 @@ class _MenuLatinState extends State<MenuLatin> {
                               primary: Color.fromARGB(255, 224, 231, 255),
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(context, '/quiz');
+                              Navigator.pushNamed(context, '/quiz2');
                             },
                             child: Container(
                               width: 126,
@@ -168,7 +168,7 @@ class _MenuLatinState extends State<MenuLatin> {
                               primary: Color.fromARGB(255, 199, 210, 254),
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(context, '/quiz');
+                              Navigator.pushNamed(context, '/quiz2');
                             },
                             child: Container(
                               width: 126,

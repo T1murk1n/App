@@ -232,13 +232,13 @@ class ResultPage extends StatelessWidget {
                 Text('${questions.length - score}', style: TextStyle(color: Colors.red, fontSize: 18),),
               ],
             ),
-            // ElevatedButton(
-            //     onPressed: () {
-            //       Navigator.pushNamed(context, '/quiz');
-            //
-            //     },
-            //     child: Text("Repeat")
-            // )
+            MaterialButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Quiz()));
+                },
+                elevation: 0.0,
+                child: Text("Repeat")
+            )
           ],
         ),
       ),

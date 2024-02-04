@@ -113,58 +113,58 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                 ),
               )
           ),
-          Positioned(
-            left: -85,
-            bottom: -140,
-            child:
-            Blur(
-              blur: 0.5,
-              child: Opacity(
-                opacity: 0.2,
-                child: Container(
-                width: 500,
-                height: 500,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(250),
-                    gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Colors.purple.shade100,
-                        Colors.indigo.shade100
-                      ],
-                    )
-                  ),
-                ),
-              ),
-            )
-            ),
-          Positioned(
-                right: -150,
-                top: -180,
-                child:
-                Blur(
-                  blur: 0.3,
-                  child: Opacity(
-                    opacity: 0.2,
-                    child: Container(
-                      width: 400,
-                      height: 400,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(200),
-                          gradient: LinearGradient(
-                            begin: Alignment.topRight,
-                            end: Alignment.bottomLeft,
-                            colors: [
-                              Colors.yellow.shade50,
-                              Colors.indigo.shade100
-                            ],
-                          )
-                      ),
-                    ),
-                  ),
-                )
-            ),
+          // Positioned(
+          //   left: -85,
+          //   bottom: -140,
+          //   child:
+          //   Blur(
+          //     blur: 0.5,
+          //     child: Opacity(
+          //       opacity: 0.2,
+          //       child: Container(
+          //       width: 500,
+          //       height: 500,
+          //       decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.circular(250),
+          //           gradient: LinearGradient(
+          //             begin: Alignment.topRight,
+          //             end: Alignment.bottomLeft,
+          //             colors: [
+          //               Colors.purple.shade100,
+          //               Colors.indigo.shade100
+          //             ],
+          //           )
+          //         ),
+          //       ),
+          //     ),
+          //   )
+          //   ),
+          // Positioned(
+          //       right: -150,
+          //       top: -180,
+          //       child:
+          //       Blur(
+          //         blur: 0.3,
+          //         child: Opacity(
+          //           opacity: 0.2,
+          //           child: Container(
+          //             width: 400,
+          //             height: 400,
+          //             decoration: BoxDecoration(
+          //                 borderRadius: BorderRadius.circular(200),
+          //                 gradient: LinearGradient(
+          //                   begin: Alignment.topRight,
+          //                   end: Alignment.bottomLeft,
+          //                   colors: [
+          //                     Colors.yellow.shade50,
+          //                     Colors.indigo.shade100
+          //                   ],
+          //                 )
+          //             ),
+          //           ),
+          //         ),
+          //       )
+          //   ),
         ]
       );
   }
