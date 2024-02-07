@@ -10,7 +10,7 @@ class Cards extends StatefulWidget {
   State<Cards> createState() => _CardsState();
 }
 
-dynamic arrLatin = [['Vertebrae thoracicae','Грудной отдел'], ['Hjhgjdhfgjdhgjdhgjdhg', 'Хуйня какая-то'], ['Vertebra', 'Позвонок'],
+dynamic arrLatin = [['Vertebrae thoracicae','Грудной отдел'], ['Hjhgjdhfgjdhgjdhgjdhg', 'Херня какая-то'], ['Vertebra', 'Позвонок'],
   ['Corpus vertebrae', 'Тело позвонка']];
 
 class _CardsState extends State<Cards> {

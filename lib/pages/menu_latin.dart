@@ -85,7 +85,7 @@ class _MenuLatinState extends State<MenuLatin> {
                             Navigator.pushNamed(context, '/cards');
                           },
                           child: Container(
-                            width: 126,
+                            width: MediaQuery.of(context).size.width / 3,
                             height: 68,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -107,7 +107,7 @@ class _MenuLatinState extends State<MenuLatin> {
 
                             },
                             child: Container(
-                              width: 126,
+                              width: MediaQuery.of(context).size.width / 3,
                               height: 68,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -134,7 +134,7 @@ class _MenuLatinState extends State<MenuLatin> {
                               Navigator.pushNamed(context, '/quiz2');
                             },
                             child: Container(
-                              width: 126,
+                              width: MediaQuery.of(context).size.width / 3,
                               height: 68,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -156,7 +156,7 @@ class _MenuLatinState extends State<MenuLatin> {
                               Navigator.pushNamed(context, '/quiz2');
                             },
                             child: Container(
-                              width: 126,
+                              width: MediaQuery.of(context).size.width / 3,
                               height: 68,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,

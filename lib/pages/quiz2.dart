@@ -104,126 +104,123 @@ class _QuizzScreenState extends State<QuizzScreen> {
             },
             physics: new NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return Column(
-                children: [
-                  SizedBox(
-                    width: double.infinity,
-                    child: Text(
-                      "Вопрос ${index + 1}/10",
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 28.0,
-                      ),
-                    ),
-                  ),
-                  Divider(
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 110.0,
-                    child: Text(
-                      "${questions[index].question}",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 22.0,
-                      ),
-                    ),
-                  ),
-                  for (int i = 0; i < questions[index].answers!.length; i++)
-                    Container(
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
                       width: double.infinity,
-                      height: 80.0,
-                      margin: EdgeInsets.only(
-                          bottom: 20.0),
-                      child: RawMaterialButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(28.0),
-                          side: BorderSide(color: btnPressed
-                              ? questions[index].answers!.values.toList()[i]
-                              ? Colors.green
-                              : Colors.red
-                              : Colors.grey)
+                      child: Text(
+                        "Вопрос ${index + 1}/10",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 26.0,
                         ),
-                        fillColor: btnPressed
-                            ? questions[index].answers!.values.toList()[i]
-                            ? AppColor.greenColor
-                            : AppColor.redColor
-                            : AppColor.transparentColor,
-                        onPressed: !answered
-                            ? () {
-                          if (questions[index]
-                              .answers!
-                              .values
-                              .toList()[i]) {
-                            score++;
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 100.0,
+                      child: Text(
+                        "${questions[index].question}",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                        ),
+                      ),
+                    ),
+                    for (int i = 0; i < questions[index].answers!.length; i++)
+                      Container(
+                        width: double.infinity,
+                        height: 80.0,
+                        margin: EdgeInsets.only(
+                            bottom: 20.0),
+                        child: RawMaterialButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(28.0),
+                            side: BorderSide(color: btnPressed
+                                ? questions[index].answers!.values.toList()[i]
+                                ? Colors.green
+                                : Colors.red
+                                : Colors.grey)
+                          ),
+                          fillColor: btnPressed
+                              ? questions[index].answers!.values.toList()[i]
+                              ? AppColor.greenColor
+                              : AppColor.redColor
+                              : AppColor.transparentColor,
+                          onPressed: !answered
+                              ? () {
+                            if (questions[index]
+                                .answers!
+                                .values
+                                .toList()[i]) {
+                              score++;
+                            }
+                            setState(() {
+                              btnPressed = true;
+                              answered = true;
+                            });
                           }
-                          setState(() {
-                            btnPressed = true;
-                            answered = true;
-                          });
-                        }
-                            : null,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 22.0, right: 22),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Flexible(
-                                child: Text(questions[index].answers!.keys.toList()[i],
-                                    style: TextStyle(
-                                      color: btnPressed
-                                          ? questions[index].answers!.values.toList()[i]
-                                          ? Colors.green
-                                          : Colors.red
-                                          : Colors.grey,
-                                      fontSize: 18.0,
-                                    )),
-                              ),
-                              getBackColorForOption(btnPressed, index, i)
-                                //  Icon(Icons.circle_outlined, color: Colors.grey)
-                            ],
+                              : null,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 22.0, right: 22),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Flexible(
+                                  child: Text(questions[index].answers!.keys.toList()[i],
+                                      style: TextStyle(
+                                        color: btnPressed
+                                            ? questions[index].answers!.values.toList()[i]
+                                            ? Colors.green
+                                            : Colors.red
+                                            : Colors.grey,
+                                        fontSize: 18.0,
+                                      )),
+                                ),
+                                getBackColorForOption(btnPressed, index, i)
+                                  //  Icon(Icons.circle_outlined, color: Colors.grey)
+                              ],
+                            ),
                           ),
                         ),
                       ),
+                    SizedBox(
+                      height: 20.0,
                     ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Container(
-                    width: double.infinity,
-                    child: RawMaterialButton(
-                      onPressed: () {
-                        if (_controller!.page?.toInt() == questions.length - 1) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ResultScreen(score)));
-                        } else {
-                          _controller!.nextPage(
-                              duration: Duration(milliseconds: 250),
-                              curve: Curves.easeInExpo);
+                    Container(
+                      width: double.infinity,
+                      child: RawMaterialButton(
+                        onPressed: () {
+                          if (_controller!.page?.toInt() == questions.length - 1) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ResultScreen(score)));
+                          } else {
+                            _controller!.nextPage(
+                                duration: Duration(milliseconds: 250),
+                                curve: Curves.easeInExpo);
 
-                          setState(() {
-                            btnPressed = false;
-                          });
-                        }
-                      },
-                      shape: StadiumBorder(),
-                      fillColor: Colors.deepOrangeAccent,
-                      padding: EdgeInsets.all(18.0),
-                      elevation: 0.0,
-                      child: Text(
-                        btnText,
-                        style: TextStyle(color: Colors.white),
+                            setState(() {
+                              btnPressed = false;
+                            });
+                          }
+                        },
+                        shape: StadiumBorder(),
+                        fillColor: Colors.deepOrangeAccent,
+                        padding: EdgeInsets.all(18.0),
+                        elevation: 0.0,
+                        child: Text(
+                          btnText,
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               );
             },
             itemCount: questions.length,
@@ -424,6 +421,4 @@ List<QuestionModel> shuffle(List<QuestionModel> items) {
   }
   return items;
 }
-
-
 List<QuestionModel> questions = shuffle(_questions);

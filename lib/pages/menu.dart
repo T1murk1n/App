@@ -101,7 +101,7 @@ class _MenuState extends State<Menu> {
                           },
                           style: style,
                           child: Container(
-                            width: 170,
+                            width: MediaQuery.of(context).size.width / 2.4,
                             height: 160,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
@@ -133,7 +133,7 @@ class _MenuState extends State<Menu> {
                           },
                           style: style,
                           child: Container(
-                            width: 170,
+                            width: MediaQuery.of(context).size.width / 2.4,
                             height: 160,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
@@ -170,7 +170,7 @@ class _MenuState extends State<Menu> {
                           },
                           style: style,
                           child: Container(
-                            width: 170,
+                            width: MediaQuery.of(context).size.width / 2.4,
                             height: 160,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
@@ -202,8 +202,8 @@ class _MenuState extends State<Menu> {
                           },
                           style: style,
                           child: Container(
-                            width: 170,
-                            height: 160,
+                            width: MediaQuery.of(context).size.width / 2.4,
+                            //height: 160,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: const Color.fromARGB(255, 249, 250, 251),
@@ -241,7 +241,7 @@ class _MenuState extends State<Menu> {
                             },
                             style: style,
                             child: Container(
-                              width: 170,
+                              width: MediaQuery.of(context).size.width / 2.4,
                               height: 160,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),

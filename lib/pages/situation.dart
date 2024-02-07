@@ -12,7 +12,7 @@ class Situation extends StatefulWidget {
 dynamic arrSituation = ['Студент-первокурсник на практике изучал компьютерную томограмму позвоночника и заметил, что позвоночные отверстия в шейном и поясничном отделах крупнее, чем в грудном. Как бы вы объяснили данный феномен?',
 'В шейном и поясничном отделах толще спинной мозг, так как здесь от него отходят нервы к руке и ноге. В соответствии с толщиной спинного будут толще и позвоночные отверстия',
 'В шейном и поясничном отделах толще спинной мозг, так как здесь от него отходят нервы к руке и ноге. В соответствии с толщиной спинного будут толще и позвоночные отверстия',
-  'В шейном и поясничном отделах толще спинной мозг, так как здесь от него отходят нервы к руке и ноге. В соответствии с толщиной спинного будут толще и позвоночные отверстия'];
+  'Что делать, если ничего делать не хочется'];
 
 class _SituationState extends State<Situation> {
   final controller = CarouselController();
@@ -65,37 +65,39 @@ class _SituationState extends State<Situation> {
       body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                buildIndicator(),
-                 CarouselSlider.builder(
-                      itemCount: arrSituation.length,
-                      itemBuilder: (context, index, realIndex) {
-                        //final item = arrSituation[index];
-
-                        return buildText(index);
-                      },
-                      carouselController: controller,
-                      options: CarouselOptions(
-                        height: 450,
-                        initialPage: 0,
-                        viewportFraction: 1,
-                        enableInfiniteScroll: false,
-                        enlargeCenterPage: true,
-                        onPageChanged: (index, reason) {
-                          setState(() {
-                            print(reason.toString());
-                            currentIndex = index;
-                          });
-                        }
-                      ),
-
-                  ),
-                SizedBox(height: 12,),
-                buildButtons(),
-
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  buildIndicator(),
+                   CarouselSlider.builder(
+                        itemCount: arrSituation.length,
+                        itemBuilder: (context, index, realIndex) {
+                          //final item = arrSituation[index];
+              
+                          return buildText(index);
+                        },
+                        carouselController: controller,
+                        options: CarouselOptions(
+                          height: 450,
+                          initialPage: 0,
+                          viewportFraction: 1,
+                          enableInfiniteScroll: false,
+                          enlargeCenterPage: true,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              print(reason.toString());
+                              currentIndex = index;
+                            });
+                          }
+                        ),
+              
+                    ),
+                  SizedBox(height: 12,),
+                  buildButtons(),
+              
+                ],
+              ),
             ),
           ),
       ),
@@ -122,7 +124,7 @@ class _SituationState extends State<Situation> {
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepOrangeAccent
+              backgroundColor: currentIndex == arrSituation.length-1 ? Colors.grey : Colors.deepOrangeAccent
           ),
               onPressed: next,
               child: Padding(
@@ -136,7 +138,7 @@ class _SituationState extends State<Situation> {
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepOrangeAccent
+              backgroundColor: currentIndex == 0 ? Colors.grey : Colors.deepOrangeAccent,
           ),
           onPressed: previous,
           child: Padding(
