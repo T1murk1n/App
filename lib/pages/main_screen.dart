@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicine/pages/styles.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -6,21 +7,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final style = ButtonStyle(
-      padding: MaterialStateProperty.all(EdgeInsets.all(0)),
-      minimumSize: MaterialStateProperty.all(Size(160, 160)),
-      shape: MaterialStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20)
-        )
-      )
-    );
-    final text = TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w300,
-        fontFamily: 'Roboto',
-        color: Colors.black
-    );
+
 
     return DefaultTabController(
         length: 2,

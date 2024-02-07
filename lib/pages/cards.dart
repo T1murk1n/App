@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
+import 'package:medicine/pages/styles.dart';
 
 class Cards extends StatefulWidget {
   const Cards({super.key});
@@ -17,12 +18,6 @@ class _CardsState extends State<Cards> {
   int i=1;
   @override
   Widget build(BuildContext context) {
-    final text = TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w300,
-        fontFamily: 'Roboto',
-        color: Colors.black
-    );
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {

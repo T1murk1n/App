@@ -12,11 +12,7 @@ class _MenuState extends State<Menu> {
 
   Widget build(BuildContext context) {
 
-    final titleText = TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w600,
-        fontFamily: 'Roboto'
-    );
+
     final style = ButtonStyle(
         padding: MaterialStateProperty.all(EdgeInsets.all(0)),
         minimumSize: MaterialStateProperty.all(Size(160, 160)),
@@ -202,7 +198,7 @@ class _MenuState extends State<Menu> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-
+                            Navigator.pushNamed(context, '/situation');
                           },
                           style: style,
                           child: Container(

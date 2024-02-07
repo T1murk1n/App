@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:medicine/pages/styles.dart';
 
 
-class AppColor {
-  static final secondaryColor = Color(0xFF117eeb);
-  static final greenColor = Color.fromARGB(35, 28, 169, 80);
-  static final redColor = Color.fromARGB(35, 239, 68, 68);
-  static final transparentColor = Color.fromARGB(255, 255, 251, 254);
-}
 
 class QuizzScreen extends StatefulWidget {
   const QuizzScreen({Key? key}) : super(key: key);

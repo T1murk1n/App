@@ -21,7 +21,6 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   );
 
 
-
   @override
   void initState() {
     super.initState();
@@ -39,8 +38,6 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     super.dispose();
 
   }
-
-
 
   Widget build(BuildContext context) {
     return

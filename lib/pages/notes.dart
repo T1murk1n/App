@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicine/pages/styles.dart';
 
 class Notes extends StatefulWidget {
   const Notes({super.key});
@@ -10,17 +11,6 @@ class Notes extends StatefulWidget {
 class _NotesState extends State<Notes> {
   @override
   Widget build(BuildContext context) {
-
-    final text = TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w300,
-        fontFamily: 'Roboto'
-    );
-    final titleText = TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w600,
-        fontFamily: 'Roboto'
-    );
 
     return DefaultTabController(
         length: 3,
