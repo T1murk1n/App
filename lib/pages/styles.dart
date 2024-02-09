@@ -15,6 +15,13 @@ final style = ButtonStyle(
         )
     )
 );
+final paddingStyle = ButtonStyle(
+    shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20)
+        )
+    )
+);
 final titleText = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,

@@ -64,6 +64,7 @@ class _CardsState extends State<Cards> {
                     },
                     carouselController: controller,
                     options: CarouselOptions(
+                      viewportFraction: 0.8,
                       height: 390,
                       initialPage: 0,
                       enableInfiniteScroll: false,
@@ -79,7 +80,7 @@ class _CardsState extends State<Cards> {
                 ],
               ),
               SizedBox(height: 18,),
-              buildButtons(),
+              buildButtons(i),
             ],
           ),
         ),
@@ -111,7 +112,7 @@ class _CardsState extends State<Cards> {
     ),
   );
 
-  Widget buildButtons({bool stretch = false}) => Row(
+  Widget buildButtons(int index) => Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       Ink(

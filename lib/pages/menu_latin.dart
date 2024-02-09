@@ -104,7 +104,7 @@ class _MenuLatinState extends State<MenuLatin> {
                               primary: Color.fromARGB(255, 251, 207, 232),
                             ),
                             onPressed: () {
-
+                              Navigator.pushNamed(context, '/check_yourself');
                             },
                             child: Container(
                               width: MediaQuery.of(context).size.width / 3,

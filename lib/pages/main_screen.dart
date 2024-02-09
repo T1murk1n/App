@@ -92,7 +92,6 @@ class MainScreen extends StatelessWidget {
                           children: [
                             Container(
                               width: MediaQuery.of(context).size.width / 2.4,
-                              height: 160,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 color: const Color.fromARGB(255, 249, 250, 251),
