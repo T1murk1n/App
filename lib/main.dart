@@ -9,6 +9,7 @@ import 'package:medicine/pages/menu_latin.dart';
 import 'package:medicine/pages/quiz2.dart';
 import 'package:medicine/pages/situation.dart';
 import 'package:medicine/pages/check_yourself.dart';
+import 'package:medicine/pages/video.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -27,5 +28,6 @@ void main() => runApp(MaterialApp(
     '/quiz2': (context) => const QuizzScreen(),
     '/situation': (context) => const Situation(),
     '/check_yourself': (context) => const CheckYourself(),
+    '/video': (context) =>  VideoPlayerWidget(),
   },
 ));

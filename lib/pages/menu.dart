@@ -237,7 +237,7 @@ class _MenuState extends State<Menu> {
                           padding: const EdgeInsets.only(left: 6.0),
                           child: ElevatedButton(
                             onPressed: () {
-
+                              Navigator.pushNamed(context, '/video');
                             },
                             style: style,
                             child: Container(
