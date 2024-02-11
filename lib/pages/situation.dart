@@ -23,13 +23,13 @@ class _SituationState extends State<Situation> {
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           if(index == 0) {
-            Navigator.pushNamed(context, '/');
+            Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
           }
           if(index == 1) {
-            Navigator.pushNamed(context, '/splash');
+            Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
           }
           if(index == 2) {
-            Navigator.pushNamed(context, '/splash');
+            Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
           }
         },
         indicatorColor: Colors.transparent,

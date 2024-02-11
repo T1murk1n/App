@@ -22,13 +22,13 @@ class _CardsState extends State<Cards> {
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           if(index == 0) {
-            Navigator.pushNamed(context, '/');
+            Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
           }
           if(index == 1) {
-            Navigator.pushNamed(context, '/splash');
+            Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
           }
           if(index == 2) {
-            Navigator.pushNamed(context, '/splash');
+            Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
           }
         },
         indicatorColor: Colors.transparent,
@@ -67,6 +67,7 @@ class _CardsState extends State<Cards> {
                       viewportFraction: 0.8,
                       height: 390,
                       initialPage: 0,
+                      scrollPhysics: NeverScrollableScrollPhysics(),
                       enableInfiniteScroll: false,
                       enlargeCenterPage: true,
                     )
@@ -162,5 +163,4 @@ class _CardsState extends State<Cards> {
       }
     });
   }
-
 }

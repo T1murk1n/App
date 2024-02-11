@@ -30,13 +30,13 @@ class _CheckYourselfState extends State<CheckYourself> {
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           if(index == 0) {
-            Navigator.pushNamed(context, '/');
+            Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
           }
           if(index == 1) {
-            Navigator.pushNamed(context, '/splash');
+            Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
           }
           if(index == 2) {
-            Navigator.pushNamed(context, '/splash');
+            Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
           }
         },
         indicatorColor: Colors.transparent,
@@ -89,6 +89,7 @@ class _CheckYourselfState extends State<CheckYourself> {
                             isPressed4 = false;
                             isPressed5 = false;
                             answer = arrCheckColumn1[0][1];
+                            correctAnswer1 = false;
                             correctAnswer2 = false;
                             correctAnswer3 = false;
                             correctAnswer4 = false;
@@ -119,6 +120,7 @@ class _CheckYourselfState extends State<CheckYourself> {
                             isPressed5 = false;
                             answer = arrCheckColumn1[1][1];
                             correctAnswer1 = false;
+                            correctAnswer2 = false;
                             correctAnswer3 = false;
                             correctAnswer4 = false;
                             correctAnswer5 = false;
@@ -149,6 +151,7 @@ class _CheckYourselfState extends State<CheckYourself> {
                             answer = arrCheckColumn1[2][1];
                             correctAnswer1 = false;
                             correctAnswer2 = false;
+                            correctAnswer3 = false;
                             correctAnswer4 = false;
                             correctAnswer5 = false;
                           });
@@ -179,6 +182,7 @@ class _CheckYourselfState extends State<CheckYourself> {
                             correctAnswer1 = false;
                             correctAnswer2 = false;
                             correctAnswer3 = false;
+                            correctAnswer4 = false;
                             correctAnswer5 = false;
                           });
 
@@ -209,6 +213,7 @@ class _CheckYourselfState extends State<CheckYourself> {
                           correctAnswer2 = false;
                           correctAnswer3 = false;
                           correctAnswer4 = false;
+                          correctAnswer5 = false;
                         });
                       },
                       style: paddingStyle,

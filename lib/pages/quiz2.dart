@@ -40,13 +40,13 @@ class _QuizzScreenState extends State<QuizzScreen> {
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) {
             if(index == 0) {
-              Navigator.pushNamed(context, '/');
+              Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
             }
             if(index == 1) {
-              Navigator.pushNamed(context, '/splash');
+              Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
             }
             if(index == 2) {
-              Navigator.pushNamed(context, '/splash');
+              Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
             }
           },
           indicatorColor: Colors.transparent,
@@ -294,10 +294,10 @@ class _ResultScreenState extends State<ResultScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Верных ответов ', style: TextStyle(fontSize: 18),),
+              Text('Верных ответов: ', style: TextStyle(fontSize: 18),),
               Text('${widget.score}', style: TextStyle(color: Colors.green, fontSize: 18),),
               SizedBox(width: 24,),
-              Text('Ошибок ', style: TextStyle(fontSize: 18),),
+              Text('Ошибок: ', style: TextStyle(fontSize: 18),),
               Text('${questions.length - widget.score}', style: TextStyle(color: Colors.red, fontSize: 18),),
             ],
           ),

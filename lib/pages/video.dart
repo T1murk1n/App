@@ -8,11 +8,12 @@ class VideoPlayerWidget extends StatefulWidget {
 }
 
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
-  late VideoPlayerController _videoPlayerController;
 
-  final FlickManager flickManager = FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/video-e38952ed73bf4686986d710b0891ca10-V.mp4',
-  ),
-  );
+  List<FlickManager> videos = [
+    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/video1.mp4',),),
+    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/video2.mp4',),),
+    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/video3.mp4',),)
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +21,13 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) {
             if (index == 0) {
-              Navigator.pushNamed(context, '/');
+              Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
             }
             if (index == 1) {
-              Navigator.pushNamed(context, '/splash');
+              Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
             }
             if (index == 2) {
-              Navigator.pushNamed(context, '/splash');
+              Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
             }
           },
           indicatorColor: Colors.transparent,
@@ -48,13 +49,26 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
         appBar: AppBar(
           title: Text('Видео'),
         ),
-        body:
-      Center(
-        child: AspectRatio(
-          aspectRatio: 16/9,
-          child: FlickVideoPlayer(flickManager: flickManager,),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView.builder(
+                  itemCount: videos.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(
+                      children: [
+                        AspectRatio(
+                          aspectRatio: 16/9,
+                          child: FlickVideoPlayer(flickManager: videos[index]),
+                        ),
+                        SizedBox(height: 25,)
+                      ],
+                    );
+                  }
+              ),
         ),
-      )
+
+
+
     );
   }
 }

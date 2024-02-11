@@ -33,13 +33,13 @@ class _MenuState extends State<Menu> {
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           if(index == 0) {
-            Navigator.pushNamed(context, '/');
+            Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
           }
           if(index == 1) {
-            Navigator.pushNamed(context, '/splash');
+            Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
           }
           if(index == 2) {
-            Navigator.pushNamed(context, '/splash');
+            Navigator.pushNamedAndRemoveUntil(context, '/splash', (route) => false);
           }
         },
         indicatorColor: Colors.transparent,
@@ -203,7 +203,7 @@ class _MenuState extends State<Menu> {
                           style: style,
                           child: Container(
                             width: MediaQuery.of(context).size.width / 2.4,
-                            //height: 160,
+                            height: 160,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: const Color.fromARGB(255, 249, 250, 251),

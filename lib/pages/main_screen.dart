@@ -15,13 +15,13 @@ class MainScreen extends StatelessWidget {
           bottomNavigationBar: NavigationBar(
             onDestinationSelected: (int index) {
               if(index == 0) {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushReplacementNamed(context, '/');
               }
               if(index == 1) {
-                Navigator.pushNamed(context, '/splash');
+                Navigator.pushReplacementNamed(context, '/splash');
               }
               if(index == 2) {
-                Navigator.pushNamed(context, '/splash');
+                Navigator.pushReplacementNamed(context, '/splash');
               }
             },
             indicatorColor: Colors.indigo.shade100,
