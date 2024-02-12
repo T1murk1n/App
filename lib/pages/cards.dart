@@ -48,7 +48,18 @@ class _CardsState extends State<Cards> {
         ],
       ),
       appBar: AppBar(
-        title: Text('Карточки'),
+        title: const Text('Карточки'),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+            child: IconButton(
+              onPressed: () {
+
+              },
+              icon: Icon(Icons.favorite_border, size: 30),
+            ),
+          )
+        ],
       ),
       body: SafeArea(
         child: Padding(

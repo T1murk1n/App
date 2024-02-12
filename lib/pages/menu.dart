@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicine/pages/styles.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -11,24 +12,6 @@ class _MenuState extends State<Menu> {
   @override
 
   Widget build(BuildContext context) {
-
-
-    final style = ButtonStyle(
-        padding: MaterialStateProperty.all(EdgeInsets.all(0)),
-        minimumSize: MaterialStateProperty.all(Size(160, 160)),
-        shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20)
-            )
-        )
-    );
-    final text = TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w300,
-        fontFamily: 'Roboto',
-        color: Colors.black
-    );
-
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
@@ -62,21 +45,21 @@ class _MenuState extends State<Menu> {
         title: Text('Позвоночник'),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.only(left: 12.0, right: 12.0),
             child: IconButton(
               onPressed: () {
 
               },
-              icon: Icon(Icons.favorite_border, size: 30),
+              icon: const Icon(Icons.favorite_border, size: 30),
             ),
           ),
           Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0),
               child: IconButton(
                 onPressed: () {
 
                 },
-                icon: Icon(Icons.search_rounded, size: 30,),
+                icon: const Icon(Icons.search_rounded, size: 30,),
               )
           )
         ],

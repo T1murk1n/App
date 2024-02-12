@@ -47,7 +47,18 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
           ],
         ),
         appBar: AppBar(
-          title: Text('Видео'),
+          title: const Text('Видео'),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+              child: IconButton(
+                onPressed: () {
+
+                },
+                icon: Icon(Icons.favorite_border, size: 30),
+              ),
+            )
+          ],
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

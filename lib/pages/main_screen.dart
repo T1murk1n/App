@@ -270,7 +270,7 @@ class MainScreen extends StatelessWidget {
 
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, '/menu');
+                                Navigator.pushNamed(context, '/first_sub_menu');
                               },
                               style: style,
                               child: Container(

@@ -45,7 +45,7 @@ class _MenuLatinState extends State<MenuLatin> {
         title: Text('Латинский'),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.only(left: 12.0, right: 12.0),
             child: IconButton(
               onPressed: () {
 
@@ -54,7 +54,7 @@ class _MenuLatinState extends State<MenuLatin> {
             ),
           ),
           Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0),
               child: IconButton(
                 onPressed: () {
 

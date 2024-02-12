@@ -59,7 +59,7 @@ class _CheckYourselfState extends State<CheckYourself> {
         title: Text('Проверь себя'),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.only(left: 12.0, right: 12.0),
             child: IconButton(
               onPressed: () {
 

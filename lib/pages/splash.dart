@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:blur/blur.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -26,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
     });
   }
@@ -41,10 +40,6 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
 
   Widget build(BuildContext context) {
     return
-      SafeArea(
-        child: Stack(
-          children:
-          [
             Scaffold(
                 backgroundColor: Colors.white,
                 body: SafeArea(
@@ -79,7 +74,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                             )
                           ],
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         Text('Учи медицину с помощью',
                           style: TextStyle(
                               fontFamily: 'Roboto',
@@ -101,7 +96,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                               fontSize: 16
                           ),
                         ),
-                        SizedBox(height: 52),
+                        const SizedBox(height: 52),
                         FadeTransition(
                             opacity: _animation,
                             child: Image(image: AssetImage('assets/logo.png'), width: 100, height: 100,)
@@ -110,9 +105,6 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                     ),
                   ),
                 )
-            ),
-          ]
-        ),
-      );
+            );
   }
 }

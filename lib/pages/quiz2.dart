@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:medicine/pages/styles.dart';
 
-
-
 class QuizzScreen extends StatefulWidget {
   const QuizzScreen({Key? key}) : super(key: key);
 
@@ -16,10 +14,7 @@ Widget getBackColorForOption(btnPressed, index, i) {
       ? Icon(Icons.check_circle, color: Colors.green)
       : Icon(Icons.cancel, color: Colors.red)
       : Icon(Icons.circle_outlined, color: Colors.grey);
-
 }
-
-
 
 class _QuizzScreenState extends State<QuizzScreen> {
   int question_pos = 0;
@@ -69,7 +64,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
           title: Text('Позвоночник'),
           actions: [
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0),
               child: IconButton(
                 onPressed: () {
 
@@ -78,7 +73,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
               ),
             ),
             Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.only(left: 12.0, right: 12.0),
                 child: IconButton(
                   onPressed: () {
 
@@ -201,7 +196,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                                     builder: (context) => ResultScreen(score)));
                           } else {
                             _controller!.nextPage(
-                                duration: Duration(milliseconds: 250),
+                                duration: const Duration(milliseconds: 250),
                                 curve: Curves.easeInExpo);
 
                             setState(() {
@@ -211,8 +206,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                         },
                         shape: StadiumBorder(),
                         fillColor: Colors.deepOrangeAccent,
-                        padding: EdgeInsets.all(18.0),
-                        elevation: 0.0,
+                        padding: const EdgeInsets.all(18.0),
                         child: Text(
                           btnText,
                           style: TextStyle(color: Colors.white),
@@ -333,8 +327,6 @@ class _ResultScreenState extends State<ResultScreen> {
   }
 }
 
-
-
 class QuestionModel {
   String? question;
   Map<String, bool>? answers;
@@ -364,8 +356,8 @@ List<QuestionModel> _questions = [
   }),
   QuestionModel("How many moons does Mars have ?", {
     "1": false,
-    "2": false,
-    "4": true,
+    "2": true,
+    "4": false,
     "8": false,
   }),
   QuestionModel("What is Mars's nickname ?", {
