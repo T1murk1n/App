@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medicine/pages/styles.dart';
 
 
-dynamic arrCheckColumn1 = [['Vertebrae sacrales', 1],['Os coccygis', 2],['Vertebrae lumbales', 3],['Os sacrum', 4],['Vertebrae thoracicae', 5],];
-dynamic arrCheckColumn2 = [['Крестцовые позвонки', 1],['Грудные позвонки', 5],['Крестец', 4],['Поясничные позвонки', 3],['Копчик', 2],];
+dynamic arrCheckColumn1 = [['Vertebrae sacrales', 1],['Os coccygis', 2],['Vertebrae lumbales', 3],['Os sacrum', 4],['Vertebrae thoracicae', 5]];
+dynamic arrCheckColumn2 = [['Крестцовые позвонки', 1], ['Грудные позвонки', 5],['Крестец', 4],['Поясничные позвонки', 3],['Копчик', 2],];
 
 class CheckYourself extends StatefulWidget {
   const CheckYourself({super.key});

@@ -105,7 +105,7 @@ class _QuizzScreenState extends State<QuizzScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: Text(
-                        "Вопрос ${index + 1}/10",
+                        "Вопрос ${index + 1}/${_questions.length}",
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: Colors.black,
@@ -334,71 +334,67 @@ class QuestionModel {
 }
 List<QuestionModel> _questions = [
   QuestionModel(
-    "How Many Whiskers does the average cat have on each side of its face ?",
+    "Отличительной особенностью шейных позвонков является:",
     {
-      "1": false,
-      "3": false,
-      "12": true,
-      "5,007": false,
+      "малое тело": false,
+      "раздвоенный остистый отросток": false,
+      "отверстие поперечного отростка": true,
+      "широкое позвоночное отверстие": false,
     },
   ),
-  QuestionModel("When does a cat purr ?", {
-    "When it cares for its kittens": false,
-    "When it needs confort hgh gkh gjkhjfk hfjhf jffhjfjghkjf fjhklfjhkjf fjhflk": false,
-    "When it feels content": false,
-    "All of the above": true,
+  QuestionModel("Fovea dentis характерна для:", {
+    "Atlas": true,
+    "Axis": false,
+    "6-го шейного позвонка": false,
+    "7-го шейного позвонка": false,
   }),
-  QuestionModel("What is the averge nulber of kittens in a litter ?", {
-    "1 to 2": false,
-    "3 to 5": true,
-    "8 to 10": false,
-    "12 to 14": false,
+  QuestionModel("Axis отличается:", {
+    "отсутствием тела": false,
+    "длинным остистым отростком": false,
+    "отсутствием отверстия поперечного отростка": false,
+    "наличием зуба": true,
   }),
-  QuestionModel("How many moons does Mars have ?", {
-    "1": false,
-    "2": true,
-    "4": false,
-    "8": false,
+  QuestionModel("Сонный бугорок является:", {
+    "задним бугорком дуги атланта": false,
+    "передним бугорком поперечного отростка 6-го шейного позвонка": true,
+    "задним бугорком поперечного отростка 6-го шейного позвонка": false,
+    "передним бугорком поперечного отростка 7-го шейного позвонка": false,
   }),
-  QuestionModel("What is Mars's nickname ?", {
-    "The red planet": true,
-    "The dusty planet": false,
-    "The hot planet": false,
-    "The smelly planet": false,
+  QuestionModel("Характерной особенность 7-го шейного позвонка является:", {
+    "наличие сонного бугорка": false,
+    "наличие зуба": false,
+    "наличие борозды позвоночной артерии": false,
+    "наличие длинного остистого отростка": true,
   }),
-  QuestionModel("About How long would it take to travel to Mars ?", {
-    "Three days": false,
-    "A month": false,
-    "Eight months": true,
-    "Two years": false,
+  QuestionModel("Отличительной особенностью грудных позвонков являются:", {
+    "длинные, наклоненные вниз остистые отростки": true,
+    "позвоночное отверстие небольших размеров": false,
+    "добавочные отростки": false,
+    "все позвонки имеют реберные ямки": false,
   }),
-  QuestionModel(
-      "Mars is Named after the Roman god Mars. What is he the god of ?", {
-    "Fire": false,
-    "Love": false,
-    "Agriculture": false,
-    "War": true,
+  QuestionModel("Сакрализацией называют:", {
+    "увеличение размеров крестца": false,
+    "увеличение числа крестцовых позвонков": true,
+    "увеличение числа поясничных позвонков": false,
+    "уменьшение числа крестцовых позвонков": false,
   }),
-  QuestionModel("Mars Is the ___ planet from the sun ?", {
-    "Secon": false,
-    "Third": false,
-    "Fourth": true,
-    "Sixth": false,
+  QuestionModel("Люмбализацией называют:", {
+    "увеличение числа грудных позвонков": false,
+    "увеличение числа крестцовых позвонков": false,
+    "увеличение числа поясничных позвонков": true,
+    "уменьшение числа поясничных позвонков": false,
   }),
-  QuestionModel(
-      "Where did Orville and Wilbur Wright build their first flying airplane ?",
-      {
-        "Paris, France": false,
-        "Boston, Massachusetts": false,
-        "Kitty Hawk, North Carolina": true,
-        "Tokyou, Japan": false,
+  QuestionModel("Промежуточный крестцовый гребень формируется вследствие срастания:", {
+        "тел позвонков": false,
+        "остистых отростков": false,
+        "поперечных отростков": true,
+        "суставных отростков": false,
       }),
-  QuestionModel(
-      "The First astronuts to travel to space came from which country ?", {
-    "United States": false,
-    "Soviet Union (now Russia)": true,
-    "China": false,
-    "Rocketonia": false,
+  QuestionModel("Реберные хрящи ложных ребер соединяются:", {
+    "с хрящами вышележащих ребер": true,
+    "с телами грудных позвонков": false,
+    "с грудиной": false,
+    "заканчиваются в мышцах брюшной стенки": false,
   }),
 ];
 

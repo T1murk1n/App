@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text('Медицинский',
+                            Text('Анатомический',
                               style: TextStyle(
                                   fontFamily: 'Roboto',
                                   fontWeight: FontWeight.bold,

@@ -167,7 +167,28 @@ class _NotesState extends State<Notes> {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text('Схема'),
+                child:
+                Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      Image(
+                        image: AssetImage('assets/scheme.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      // other irrelevent children here
+                    ]
+                ),
+                /*Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 500,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage('assets/scheme.jpg'),
+                    ),
+                  ),
+                )*/
+                //Image(image: AssetImage('assets/scheme.jpg'), fit: BoxFit.fitHeight)
               )
             ],
           ),

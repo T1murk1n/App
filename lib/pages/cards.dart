@@ -10,8 +10,13 @@ class Cards extends StatefulWidget {
   State<Cards> createState() => _CardsState();
 }
 
-dynamic arrLatin = [['Vertebrae thoracicae','Грудной отдел'], ['Hjhgjdhfgjdhgjdhgjdhg', 'Херня какая-то'], ['Vertebra', 'Позвонок'],
-  ['Corpus vertebrae', 'Тело позвонка']];
+dynamic arrLatin = [
+  ['Vertebra','Позвонок'], ['Corpus vertebrae', 'Тело позвонка'], ['Arcus vertebrae', 'Дуга позвонка'], ['Pedunculi arcus vertebrae', 'Ножки дуги позвонка '],
+  ['Foramen vertebrale','Позвоночное отверстие'], ['Canalis vertebralis', 'Позвоночный канал'], ['Processus spinosus', 'Остистый отросток'],
+  ['Processus transversus', 'Поперечные отростки'],
+  ['Processus articulares superiores ','Верхние суставные отростки'], ['Processus articulares inferiores', 'Нижние суставные отростки'],
+  ['Incisurae vertebrales superiores ', 'Верхнюю позвоночная вырезка'], ['Vertebrae cervicales', 'Шейные позвонки'],
+];
 
 class _CardsState extends State<Cards> {
   final controller = CarouselController();
@@ -110,7 +115,10 @@ class _CardsState extends State<Cards> {
         borderRadius: BorderRadius.circular(50),
         color: Colors.grey.shade100,
       ),
-      child: Center(child: Text(arrLatin[index][0], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
+      child: Padding(
+        padding: const EdgeInsets.all(28.0),
+        child: Center(child: Text(arrLatin[index][0], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
+      ),
 
     ),
     back: Container(
@@ -119,8 +127,12 @@ class _CardsState extends State<Cards> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         color: Colors.grey.shade100,
+
       ),
-      child: Center(child: Text(arrLatin[index][1], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
+      child: Padding(
+        padding: const EdgeInsets.all(28.0),
+        child: Center(child: Text(arrLatin[index][1], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),)),
+      ),
     ),
   );
 

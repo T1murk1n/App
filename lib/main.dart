@@ -8,6 +8,8 @@ import 'package:medicine/pages/menu_latin.dart';
 import 'package:medicine/pages/quiz2.dart';
 import 'package:medicine/pages/situation.dart';
 import 'package:medicine/pages/check_yourself.dart';
+import 'package:medicine/pages/testRusLat.dart';
+import 'package:medicine/pages/testLatRus.dart';
 import 'package:medicine/pages/video.dart';
 import 'package:medicine/pages/first_sub_menu.dart';
 import 'package:medicine/pages/second_sub_menu.dart';
@@ -31,5 +33,7 @@ void main() => runApp(MaterialApp(
     '/video': (context) =>  VideoPlayerWidget(),
     '/first_sub_menu': (context) =>  const FirstSubMenu(),
     '/second_sub_menu': (context) =>  const SecondSubMenu(),
+    '/testruslat': (context) =>  const TestRusLat(),
+    '/testlatrus': (context) =>  const TestLatRus(),
   },
 ));

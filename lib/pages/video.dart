@@ -1,6 +1,7 @@
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:medicine/pages/styles.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
   @override
@@ -9,10 +10,16 @@ class VideoPlayerWidget extends StatefulWidget {
 
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
 
+  List<String> videosTitles = [
+    "Axis", "Поясничный позвонок (vertebrae lumbalis)", "Крестец (sacrum)", "Atlas", ""
+  ];
+
   List<FlickManager> videos = [
-    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/video1.mp4',),),
-    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/video2.mp4',),),
-    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/video3.mp4',),)
+    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/axis.mp4',),),
+    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/lumbalis.mp4',),),
+    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/sacrum.mp4',),),
+    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/atlas.mp4',),),
+    FlickManager(videoPlayerController: VideoPlayerController.asset('assets/video/video.mp4',),),
   ];
 
   @override
@@ -67,6 +74,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                   itemBuilder: (BuildContext context, int index) {
                     return Column(
                       children: [
+                        Text('${videosTitles[index]}', style: titleText,),
+                        SizedBox(height: 10,),
                         AspectRatio(
                           aspectRatio: 16/9,
                           child: FlickVideoPlayer(flickManager: videos[index]),

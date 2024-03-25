@@ -85,9 +85,12 @@ flutter:
      - assets/tests.png
      - assets/theory.png
      - assets/video.png
-     - assets/video/video1.mp4
-     - assets/video/video2.mp4
-     - assets/video/video3.mp4
+     - assets/video/atlas.mp4
+     - assets/video/axis.mp4
+     - assets/video/video.mp4
+     - assets/video/lumbalis.mp4
+     - assets/video/sacrum.mp4
+     - assets/scheme.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
